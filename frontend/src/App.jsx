@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import { Route, Routes } from "react-router-dom";
 import PostsPage from './pages/PostsPage';
 import CommentPage from './pages/CommentPage';
-import Login from './pages/login';
+import Login from './pages/Login';
 import Leaderboard from './pages/Leaderboard';
 import MyPosts from './pages/MyPosts';
 const App = () => {
