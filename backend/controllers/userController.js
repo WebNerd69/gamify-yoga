@@ -119,4 +119,43 @@ const updateUserAvgRating = async (userId) => {
      }
 }
 
-export { userLogin, userRegister, deleteUser, updateUserAvgRating }
+const getUserData = async(req,res)=>{
+     try {
+          const {token} = req.headers
+          if(!token) {
+               return res.json({success: false, message: "No token provided"})
+          }
+          
+          const decoded = jwt.verify(token, process.env.JWT_SECERT)
+          const userId = decoded.id
+
+          const userData = userModel.findById(userId)
+          if (userData) {
+               res.json({success:true,userData})
+          } else {
+               req.json({success:false,message:"failed to retreive data"})
+          }
+     } catch (error) {
+          res.json({success:false,message:error.message})
+     }
+}
+const getUserDataForPost = async(req,res)=>{
+     try {
+          
+          const {userId} = req.body
+          if(!userId) {
+               console.log(userId)
+               return res.json({success: false, message: "No id provided"})
+          }
+
+          const userData = await userModel.findById(userId)
+          if (userData) {
+               res.json({success:true,userData})
+          } else {
+               res.json({success:false,message:"failed to retreive data"})
+          }
+     } catch (error) {
+          res.json({success:false,message:error.message})
+     }
+}
+export { userLogin, userRegister, deleteUser, updateUserAvgRating, getUserData ,getUserDataForPost}

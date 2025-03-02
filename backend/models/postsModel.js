@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
      image : {type :String},
      date: {type :Number , default:Date.now()},
      rating : {type : Number , required: true},
-     comments : {type: Object , default: {}}
+     comments : {type: Array , default: []}
 }, {minimize: false})
 
 const postModel = mongoose.models.post || mongoose.model('post',postSchema)
