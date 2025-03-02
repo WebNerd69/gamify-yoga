@@ -7,7 +7,7 @@ const PostsPage = () => {
   return (
     <div className='flex'>
       <Sidebar/>
-      <div className='w-[100%] flex justify-between flex-col'>
+      <div className='w-[100%] h-[100vh] flex justify-between flex-col'>
         <Posts/>
         <AddPost/>
       </div>

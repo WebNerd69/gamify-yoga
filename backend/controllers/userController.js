@@ -119,26 +119,36 @@ const updateUserAvgRating = async (userId) => {
      }
 }
 
-const getUserData = async(req,res)=>{
+const getUserData = async (req, res) => {
      try {
-          const {token} = req.headers
-          if(!token) {
-               return res.json({success: false, message: "No token provided"})
+          const { token } = req.headers;
+          if (!token) {
+               return res.json({ success: false, message: "No token provided" });
           }
-          
-          const decoded = jwt.verify(token, process.env.JWT_SECERT)
-          const userId = decoded.id
 
-          const userData = userModel.findById(userId)
+          console.log("Token received:", token);
+
+          // Verify token
+          const decoded = jwt.verify(token, "allahuakbar");
+          const userId = decoded.id;
+          console.log("Decoded user ID:", userId);
+
+          // Wait for the user data to be retrieved
+          const userData = await userModel.findById(userId).lean(); // Use `lean()` to get plain JSON data
+
+          console.log("User Data:", userData);
+
           if (userData) {
-               res.json({success:true,userData})
+               res.json({ success: true, userData });
           } else {
-               req.json({success:false,message:"failed to retreive data"})
+               res.json({ success: false, message: "Failed to retrieve data" });
           }
      } catch (error) {
-          res.json({success:false,message:error.message})
+          console.error("Error:", error);
+          res.json({ success: false, message: error.message });
      }
-}
+};
+
 const getUserDataForPost = async(req,res)=>{
      try {
           

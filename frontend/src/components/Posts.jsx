@@ -6,7 +6,7 @@ const Posts = () => {
      // const [postsData,setPostsData] = useState([])       
      const {posts} = useContext(AppContext)
   return (
-    <div className='w-[80%] mx-auto px-20 py-10 max-h-[85vh] overflow-y-auto'>
+    <div className='w-[80%] mx-auto px-20 py-32 max-h-[100vh] overflow-y-auto'>
           {posts.map((item,index)=>{
                return(
                     <div key={index}>

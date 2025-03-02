@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 
 const AddPost = () => {
-     const { BACKEND_URL, token, addImage } = useContext(AppContext)
+     const { BACKEND_URL, token, addImage , reloadPosts } = useContext(AppContext)
      const [name, setName] = useState('')
      const [description, setDescription] = useState('')
      const [image, setImage] = useState(null) // Changed from false to null to correctly handle file input
@@ -37,7 +37,8 @@ const AddPost = () => {
      }
 
      return (
-          <form onSubmit={onSubmitHandler} className='px-10 py-4 flex items-center justify-evenly w-[90%] gap-6'>
+          <form onSubmit={onSubmitHandler} className='px-10 py-4 flex items-center justify-evenly w-[80%] flex-col bg-opacity-40 backdrop-blur-lg bg-white absolute bottom-0 mx-auto'>
+               <p onClick={()=>reloadPosts()} className='color-bg text-gray-200 px-5 py-2 rounded-full hover:text-white font-medium transition-all duration-150 cursor-pointer'><i className="ri-arrow-up-long-line"></i>Load new Posts</p>
                <div className='px-10 py-4 flex items-center justify-between w-[90%] gap-6'>
 
                     <label htmlFor="image" className='w-14 h-14 rounded-lg flex items-center justify-center border-2 border-dashed border-[#454343aa]'>
@@ -60,8 +61,8 @@ const AddPost = () => {
                          onChange={(e) => setDescription(e.target.value)}
                          required
                     />
-               </div>
                <button type='submit'><i className="ri-send-plane-fill text-3xl text-purple-500 hover:text-purple-700 cursor-pointer"></i></button>
+               </div>
 
           </form>
      )
