@@ -17,4 +17,8 @@ To get started, simply sign up and create your profile. Then, start exploring th
 Are you ready to take your yoga practice to the next level? Let's gamify yoga and make it a fun and rewarding experience. Start your journey now!
 
 
+<<<<<<< HEAD
 **Devs**: Meet the team behind the website - KazirangaCoders (Programmer), WebNerd69 (Designer), Arpan Paul (Designer), and Jeet Mahanta (Tester).
+=======
+**Devs**: Meet the team behind the website - KazirangaCoders (Programmer), WebNerd69 (Designer), Arpan Paul (Designer), and Jeet Mahanta (Tester).
+>>>>>>> 17e9076ac3742916dbbad62676c19f56ecc41849
