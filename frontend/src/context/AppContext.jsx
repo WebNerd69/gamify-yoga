@@ -12,7 +12,7 @@ const AppContextProvider = (props) => {
   const [posts,setPosts] = useState([])
   const [token, setToken] = useState('')
   const [user,setUser] = useState()
-  const BACKEND_URL = "http://localhost:3000"
+  const BACKEND_URL = "https://gamify-yoga-backend.onrender.com"
   const navigate = useNavigate()
 
 
