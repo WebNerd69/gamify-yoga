@@ -1,12 +1,11 @@
 import React from 'react'
 import { ToastContainer } from 'react-toastify'
 import { Route, Routes } from "react-router-dom";
-import Home from './pages/Home';
-import Login from './pages/login'
 import PostsPage from './pages/PostsPage';
 import Leaderboard from './pages/leaderboard';
 import CommentPage from './pages/CommentPage';
 import MyPosts from './pages/myPosts';
+import Login from './pages/login';
 const App = () => {
   return (
     <div>
