@@ -63,7 +63,7 @@ const Leaderboard = () => {
               
               leaderboardMembers.slice(3,len).map((item,index)=>{
                 return(
-                  <div className=' px-5 py-2 border w-3/4 rounded-xl flex gap-4 justify-between items-center' key={index}>
+                  <div className=' px-5 py-2 border w-3/4 rounded-xl flex gap-4 justify-between items-center flex-col' key={index}>
                     <div className="flex items-center gap-2">
                         <p className='font-medium'>{`#${item.rank}` }</p>
                       <img src={leaderboardMembers[index]?.profilePic || lettuce} className="rounded-full w-14 h-14 my-2" alt="User 3" />
